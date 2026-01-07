@@ -1,0 +1,23 @@
+# Claude Code settings
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files (if added in future)
+.env
+.env.local
+
+# Dependencies (if added in future)
+node_modules/
+
+# Build output (if added in future)
+dist/
+build/
