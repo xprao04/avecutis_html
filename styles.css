@@ -8,12 +8,12 @@
 :root {
     /* Primary Colors - Avecutis Green */
     --primary-color: #38a13e;
-    --primary-dark: #2d8032;
+    --primary-dark: #044f02;
     --primary-light: #4db854;
 
     /* Accent Color - Secondary */
-    --accent-color: #38a13e;
-    --accent-dark: #2d8032;
+    --accent-color: #29a507;
+    --accent-dark: #044f02;
 
     /* Neutrals - Clean Medical Aesthetic */
     --white: #ffffff;
@@ -291,7 +291,7 @@ img, iframe, video {
    =================================== */
 
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
