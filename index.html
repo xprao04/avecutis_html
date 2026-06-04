@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="facemap.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -137,6 +138,67 @@
                     <ul>
                         <li>Spolupracujeme se čtyřmi smluvními zdravotními pojišťovnami včetně Všeobecné zdravotní pojišťovny a vojenské, průmyslové a resortní pojišťovny ministerstva vnitra.</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Face Map Section (exploratory feature — see facemap.css / facemap.js) -->
+    <section class="section section-facemap" id="face-map">
+        <div class="container">
+            <h2 class="section-title">Najděte zákrok podle oblasti</h2>
+            <p class="section-intro">Vyberte oblast obličeje a zobrazte si dostupné zákroky.</p>
+
+            <div class="facemap-wrap">
+                <div class="facemap-stage">
+                    <svg class="facemap-face" viewBox="0 0 200 250" aria-label="Mapa obličeje">
+                        <!-- hair -->
+                        <path class="fm-art" d="M58,112 C54,60 78,42 100,42 C122,42 146,60 142,112"/>
+                        <path class="fm-art" d="M58,112 C40,140 42,186 58,220"/>
+                        <path class="fm-art" d="M142,112 C160,140 158,186 142,220"/>
+                        <!-- face -->
+                        <path class="fm-art" d="M100,70 C76,70 66,96 66,122 C66,154 78,196 100,206 C122,196 134,154 134,122 C134,96 124,70 100,70 Z"/>
+                        <!-- brows -->
+                        <path class="fm-art" d="M72,116 C78,111 90,111 96,115"/>
+                        <path class="fm-art" d="M104,115 C110,111 122,111 128,116"/>
+                        <!-- left eye -->
+                        <path class="fm-art" d="M74,128 C80,122 92,122 96,128"/>
+                        <path class="fm-art" d="M75,129 C82,133 92,133 95,129"/>
+                        <circle class="fm-pupil" cx="85" cy="128" r="2"/>
+                        <path class="fm-art" d="M74,128 l-4,-2"/>
+                        <!-- right eye -->
+                        <path class="fm-art" d="M104,128 C108,122 120,122 126,128"/>
+                        <path class="fm-art" d="M105,129 C110,133 120,133 125,129"/>
+                        <circle class="fm-pupil" cx="115" cy="128" r="2"/>
+                        <path class="fm-art" d="M126,128 l4,-2"/>
+                        <!-- nose -->
+                        <path class="fm-art" d="M100,134 C99,148 97,156 94,160 C98,163 104,163 107,160"/>
+                        <!-- lips -->
+                        <path class="fm-art" d="M85,180 C90,173 96,177 100,180 C104,177 110,173 115,180"/>
+                        <path class="fm-art" d="M85,180 C94,191 106,191 115,180"/>
+                        <path class="fm-art" d="M85,180 C95,182 105,182 115,180"/>
+
+                        <!-- interactive regions -->
+                        <g class="facemap-region" data-region="forehead" role="button" tabindex="0" aria-label="Čelo" aria-pressed="false">
+                            <rect class="fm-hit" x="72" y="78" width="56" height="32" rx="14"/>
+                            <text class="fm-label" x="100" y="99" text-anchor="middle">Čelo</text>
+                        </g>
+                        <g class="facemap-region" data-region="eyelids" role="button" tabindex="0" aria-label="Oční víčka" aria-pressed="false">
+                            <ellipse class="fm-hit" cx="85" cy="128" rx="16" ry="11"/>
+                            <ellipse class="fm-hit" cx="115" cy="128" rx="16" ry="11"/>
+                            <text class="fm-label" x="100" y="152" text-anchor="middle">Oční víčka</text>
+                        </g>
+                        <g class="facemap-region" data-region="lips" role="button" tabindex="0" aria-label="Rty" aria-pressed="false">
+                            <ellipse class="fm-hit" cx="100" cy="181" rx="20" ry="11"/>
+                            <text class="fm-label" x="100" y="204" text-anchor="middle">Rty</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="facemap-panel" id="facemapPanel" aria-live="polite">
+                    <div class="fm-eyebrow">Vyberte oblast</div>
+                    <h3>Co vás zajímá?</h3>
+                    <p class="fm-hint">Najeďte nebo klepněte na oblast obličeje (čelo, oční víčka, rty) a zobrazí se dostupné zákroky.</p>
                 </div>
             </div>
         </div>
@@ -558,5 +620,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="facemap.js"></script>
 </body>
 </html>

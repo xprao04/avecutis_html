@@ -1,0 +1,188 @@
+/* ===================================================================
+   Interactive Face Map  (exploratory feature — self-contained)
+   To remove: delete facemap.css + facemap.js, and the #face-map
+   section + its <link>/<script> lines in index.html.
+   =================================================================== */
+
+.section-facemap {
+    background: linear-gradient(135deg, #38a13e 0%, #2a7d2f 100%);
+    color: #fff;
+}
+
+.section-facemap .section-title,
+.section-facemap .section-intro {
+    color: #fff;
+}
+
+/* Layout: mobile-first = stacked (face on top, panel below) */
+.facemap-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.facemap-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facemap-face {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Face line-art strokes */
+.facemap-face .fm-art {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.facemap-face .fm-pupil {
+    fill: #ffd700;
+    stroke: none;
+}
+
+/* Region hotspots */
+.facemap-region {
+    cursor: pointer;
+    outline: none;
+}
+
+.facemap-region .fm-hit {
+    fill: rgba(255, 215, 0, 0);
+    stroke: none;
+    transition: fill 0.2s ease;
+}
+
+.facemap-region .fm-label {
+    fill: #ffd700;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+/* Hover preview (desktop only — never required on touch) */
+@media (hover: hover) {
+    .facemap-region:hover .fm-hit {
+        fill: rgba(255, 215, 0, 0.28);
+    }
+    .facemap-region:hover .fm-label {
+        opacity: 1;
+    }
+}
+
+/* Active (selected) region — also bumps stroke so it's not colour-only */
+.facemap-region.is-active .fm-hit {
+    fill: rgba(255, 215, 0, 0.42);
+}
+.facemap-region.is-active .fm-label {
+    opacity: 1;
+}
+
+/* Keyboard focus visibility */
+.facemap-region:focus-visible .fm-hit {
+    fill: rgba(255, 215, 0, 0.30);
+    stroke: #ffd700;
+    stroke-width: 2;
+}
+
+/* Detail panel */
+.facemap-panel {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 22px 24px;
+    min-height: 280px;
+}
+
+.facemap-panel .fm-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: 700;
+}
+
+.facemap-panel h3 {
+    margin: 0.2em 0 0.7em;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.facemap-panel .fm-hint {
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Procedure accordion */
+.fm-proc {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.fm-proc:first-child {
+    border-top: none;
+}
+
+.fm-proc-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.fm-proc-toggle .fm-chevron {
+    flex-shrink: 0;
+    color: #ffd700;
+    transition: transform 0.2s ease;
+}
+
+.fm-proc.is-open .fm-proc-toggle .fm-chevron {
+    transform: rotate(90deg);
+}
+
+.fm-proc-body {
+    display: none;
+    padding: 0 0 16px;
+}
+.fm-proc.is-open .fm-proc-body {
+    display: block;
+}
+
+.fm-proc-desc {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin: 0 0 0.5em;
+}
+
+.fm-proc-price {
+    color: #ffd700;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Desktop: two columns (face left, panel right) */
+@media (min-width: 768px) {
+    .facemap-wrap {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: stretch;
+    }
+}
