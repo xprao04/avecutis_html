@@ -1,0 +1,31 @@
+<!-- CHOSEN style for the interactive face-map feature: "A — Soft Beauty".
+     Single-line feminine face, white stroke on green/gold brand. Gold pupils.
+     Eyes are symmetric and inside the face oval. viewBox 0 0 200 250. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" aria-label="Soft beauty face"
+     fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- hair -->
+  <path d="M58,112 C54,60 78,42 100,42 C122,42 146,60 142,112"/>
+  <path d="M58,112 C40,140 42,186 58,220"/>
+  <path d="M142,112 C160,140 158,186 142,220"/>
+  <!-- face -->
+  <path d="M100,70 C76,70 66,96 66,122 C66,154 78,196 100,206 C122,196 134,154 134,122 C134,96 124,70 100,70 Z"/>
+  <!-- brows -->
+  <path d="M72,116 C78,111 90,111 96,115"/>
+  <path d="M104,115 C110,111 122,111 128,116"/>
+  <!-- left eye -->
+  <path d="M74,128 C80,122 92,122 96,128"/>
+  <path d="M75,129 C82,133 92,133 95,129"/>
+  <circle cx="85" cy="128" r="2" fill="#ffd700" stroke="none"/>
+  <path d="M74,128 l-4,-2"/>
+  <!-- right eye -->
+  <path d="M104,128 C108,122 120,122 126,128"/>
+  <path d="M105,129 C110,133 120,133 125,129"/>
+  <circle cx="115" cy="128" r="2" fill="#ffd700" stroke="none"/>
+  <path d="M126,128 l4,-2"/>
+  <!-- nose -->
+  <path d="M100,134 C99,148 97,156 94,160 C98,163 104,163 107,160"/>
+  <!-- lips -->
+  <path d="M85,180 C90,173 96,177 100,180 C104,177 110,173 115,180"/>
+  <path d="M85,180 C94,191 106,191 115,180"/>
+  <path d="M85,180 C95,182 105,182 115,180"/>
+</svg>

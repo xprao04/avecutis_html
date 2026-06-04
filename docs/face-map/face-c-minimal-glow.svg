@@ -1,0 +1,17 @@
+<!-- BACKUP style (not chosen) for the interactive face-map feature: "C — Minimal Glow".
+     Kept for future discussion with the clinic owners. viewBox 0 0 200 250. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" aria-label="Minimal face"
+     fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- hair -->
+  <path d="M60,110 C56,62 80,44 100,44 C120,44 144,62 140,110"/>
+  <path d="M60,110 C46,142 48,184 60,214"/>
+  <path d="M140,110 C154,142 152,184 140,214"/>
+  <!-- face -->
+  <path d="M100,72 C78,72 70,98 70,124 C70,156 82,196 100,204 C118,196 130,156 130,124 C130,98 122,72 100,72 Z"/>
+  <!-- eyes (lash line only) -->
+  <path d="M76,128 C82,123 92,123 97,128"/>
+  <path d="M103,128 C108,123 118,123 124,128"/>
+  <!-- lips -->
+  <path d="M88,182 C95,176 105,176 112,182"/>
+  <path d="M88,182 C95,188 105,188 112,182"/>
+</svg>
