@@ -1101,6 +1101,28 @@ img, iframe, video {
 }
 
 /* ===================================
+   Mobile only (phones)
+   =================================== */
+
+/* On phones the 4 service boxes don't fit in a single row and
+   overflow the screen, so stack them into an equal 2x2 grid.
+   Desktop (>=768px) keeps the 1x4 row untouched. */
+@media (max-width: 767px) {
+    .hero-services {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 1fr;
+        gap: var(--spacing-sm);
+        width: 100%;
+    }
+
+    .hero-service-btn {
+        max-width: none;
+        white-space: normal;
+    }
+}
+
+/* ===================================
    Performance Optimizations
    =================================== */
 
